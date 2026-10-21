@@ -1,0 +1,36 @@
+.top-bar {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: red;
+  width: 100%;
+
+  .info-button {
+    margin-right: 7px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 26px;
+    height: 26px;
+
+    background-color: #0878f9;
+    color: white;
+
+    border: none;
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: #0064d9;
+    }
+  }
+  .second-sentence {
+    margin-left: 4px;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+}

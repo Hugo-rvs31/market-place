@@ -1,0 +1,17 @@
+.secondary-nav {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  p {
+    cursor: pointer;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    &:hover {
+      text-decoration: underline;
+      color: grey;
+    }
+  }
+}
