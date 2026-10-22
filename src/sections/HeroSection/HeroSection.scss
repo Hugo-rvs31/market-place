@@ -1,7 +1,87 @@
 .hero-section {
-  min-height: 450px;
-  background-image: url("../../assets/images/heroSection/hero-section-image.jpg");
+  position: relative;
+  min-height: 480px;
+
+  background-image: url("../../assets/images/heroSection/hero-section-background.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  &__center-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: min(70%, 900px);
+    height: 100%;
+    object-fit: contain;
+
+    z-index: 1;
+    pointer-events: none;
+
+    // Fondu permanent en haut et en bas
+    // combiné au fondu horizontal
+    -webkit-mask-image:
+      linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.2) 10%,
+        black 25%,
+        black 75%,
+        rgba(0, 0, 0, 0.2) 90%,
+        transparent 100%
+      ),
+      linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(0, 0, 0, 0.1) 10%,
+        rgba(0, 0, 0, 0.4) 25%,
+        black 45%,
+        black 55%,
+        rgba(0, 0, 0, 0.4) 75%,
+        rgba(0, 0, 0, 0.1) 90%,
+        transparent 100%
+      );
+
+    -webkit-mask-composite: source-in;
+
+    mask-image:
+      linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.2) 10%,
+        black 25%,
+        black 75%,
+        rgba(0, 0, 0, 0.2) 90%,
+        transparent 100%
+      ),
+      linear-gradient(
+        to right,
+        transparent 0%,
+        rgba(0, 0, 0, 0.1) 10%,
+        rgba(0, 0, 0, 0.4) 25%,
+        black 45%,
+        black 55%,
+        rgba(0, 0, 0, 0.4) 75%,
+        rgba(0, 0, 0, 0.1) 90%,
+        transparent 100%
+      );
+
+    mask-composite: intersect;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    min-height: 480px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .hero-section-content-inner {
+      margin-left: 40px;
+    }
+  }
 }

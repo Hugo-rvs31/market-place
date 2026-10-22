@@ -3,9 +3,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  background: red;
+  padding: 7px;
+
   width: 100%;
+
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -90%;
+    z-index: -1;
+
+    background:
+      radial-gradient(ellipse at 5% 30%, #ff00b8 0%, transparent 45%),
+      radial-gradient(ellipse at 85% 10%, #008cff 0%, transparent 45%),
+      radial-gradient(ellipse at 15% 85%, #003cff 0%, transparent 45%),
+      radial-gradient(ellipse at 65% 75%, #ff00d4 0%, transparent 45%),
+      radial-gradient(
+        ellipse at 48% 0%,
+        #ffff00 0%,
+        #ffea00 40%,
+        transparent 45%
+      ),
+      radial-gradient(ellipse at 50% 45%, #d5d5e5 0%, transparent 50%),
+      radial-gradient(ellipse at 55% 100%, #00eaff 0%, transparent 40%);
+
+    filter: blur(25px);
+  }
 
   .info-button {
     margin-right: 7px;
@@ -27,6 +54,9 @@
     &:hover {
       background-color: #0064d9;
     }
+  }
+  p {
+    font-size: 0.9rem;
   }
   .second-sentence {
     margin-left: 4px;
