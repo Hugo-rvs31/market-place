@@ -1,2 +1,13 @@
 .category-nav {
+  display: flex;
+  gap: 10px;
+
+  li {
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+
+    &:hover {
+      border-bottom: 2px solid black;
+    }
+  }
 }
